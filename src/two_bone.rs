@@ -1,7 +1,7 @@
-use vect::prelude::*;
 use approx::*;
+use vect::prelude::*;
 
-use crate::{vector2::*};
+use crate::vector2::*;
 
 pub fn calculate_point_between(
 	target: Vector2,
@@ -34,7 +34,6 @@ pub fn calculate_point_between(
 mod tests {
 	use super::*;
 
-	
 	#[test]
 	fn test_calculate_point_between() {
 		let target = Vector2::new(20.0, 0.0);
@@ -42,9 +41,9 @@ mod tests {
 		let first_len = 16.6;
 		let second_len = 8.6;
 		let stretch_factor = 1.0;
-		
+
 		let result =
-		calculate_point_between(target, first_point, first_len, second_len, stretch_factor);
+			calculate_point_between(target, first_point, first_len, second_len, stretch_factor);
 
 		const E: f64 = 0.00000001;
 		assert_relative_eq!(result.x, 15.04, epsilon = E);
