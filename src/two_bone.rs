@@ -3,7 +3,7 @@ use vect::prelude::*;
 
 use crate::vector2::*;
 
-pub fn calculate_point_between(
+pub fn calculate_point_between_stretched(
 	target: Vector2,
 	first_point: Vector2,
 	first_len: f64,
@@ -42,8 +42,13 @@ mod tests {
 		let second_len = 8.6;
 		let stretch_factor = 1.0;
 
-		let result =
-			calculate_point_between(target, first_point, first_len, second_len, stretch_factor);
+		let result = calculate_point_between_stretched(
+			target,
+			first_point,
+			first_len,
+			second_len,
+			stretch_factor,
+		);
 
 		const E: f64 = 0.00000001;
 		assert_relative_eq!(result.x, 15.04, epsilon = E);
