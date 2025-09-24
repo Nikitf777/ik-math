@@ -1,2 +1,2 @@
-mod two_bone;
+pub mod two_bone;
 mod vector2;
